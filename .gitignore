@@ -1,0 +1,31 @@
+# Python virtual environments
+venv/
+.env/
+.venv/
+__pycache__/
+*.pyc
+
+# Poetry-related
+poetry.lock
+*.egg-info/
+
+# VS Code settings
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# YAML lint or tooling cache
+*.log
+.cache/
+dist/
+build/
+
+# GitHub Pages / site build artifacts (if using)
+_site/
+docs/.DS_Store
+
+# Sigma CLI or test output
+output.yml
+converted_rules/
