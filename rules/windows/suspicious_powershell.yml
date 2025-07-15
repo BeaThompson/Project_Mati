@@ -1,1 +1,24 @@
+title: Suspicious PowerShell Execution
+id: win-suspicious-powershell
+status: stable
+description: Detects potentially suspicious PowerShell commands often used in attacks.
+references:
+  - https://attack.mitre.org/techniques/T1059/001/
+logsource:
+  product: windows
+  service: powershell
+detection:
+  selection:
+    ScriptBlockText|contains:
+      - "Invoke-Expression"
+      - "IEX"
+      - "Net.WebClient"
+      - "DownloadString"
+  condition: selection
+falsepositives:
+  - Administrator scripting
+level: high
+tags:
+  - attack.execution
+  - attack.t1059.001
 
