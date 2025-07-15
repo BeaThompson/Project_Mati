@@ -1,4 +1,5 @@
 Sigma Rule Writing Guide: [My Method]
+
 [Step 1:] Define the Metadata
 Every rule starts with metadata that explains its purpose and ownership. Define a clear, descriptive title, add your name as the author, assign a unique rule ID, and set the status (experimental, stable). The description should clarify what the rule is catching and why it matters. Include links to MITRE ATT&CK or threat research in the references.
 
