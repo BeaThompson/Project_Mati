@@ -2,6 +2,7 @@ title: Suspicious PowerShell Execution
 id: win-suspicious-powershell
 status: stable
 description: Detects potentially suspicious PowerShell commands often used in attacks.
+author: Beowxlf
 references:
   - https://attack.mitre.org/techniques/T1059/001/
 logsource:
