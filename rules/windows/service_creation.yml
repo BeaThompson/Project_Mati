@@ -1,1 +1,21 @@
+title: Windows Service Creation
+id: win-service-creation
+status: stable
+description: Detects the creation of new services in Windows which can be abused for persistence or privilege escalation.
+author: Beowxlf
+references:
+  - https://attack.mitre.org/techniques/T1543/003/
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 7045
+  condition: selection
+falsepositives:
+  - Legitimate service installs
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1543.003
 
