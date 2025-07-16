@@ -1,6 +1,6 @@
 # Project_Mati
 
-**Project_Mati** is a collection of Sigma detection rules, supporting lab simulations, and detection engineering documentation. The goal is to build a practical detection engineering portfolio that maps directly to real-world adversary techniques, leveraging the MITRE ATT&CK framework.
+**Project_Mati** is a detection engineering repository that combines Sigma detection rules, adversary simulation labs, and structured technical notes. The goal is to develop comprehensive detection capabilities mapped to the MITRE ATT&CK framework, supported by deep technical knowledge of Windows internals, network protocols, and logging systems.
 
 ---
 
@@ -9,41 +9,57 @@
 | Folder/File | Description |
 |-------------|-------------|
 | `/rules/` | Sigma detection rules categorized by operating system (Windows, Linux, Cloud). |
-| `/labs/` | Lab simulations and write-ups that demonstrate adversary behaviors and their detection. |
-| `/docs/` | Guides and references on detection engineering, SIEM pipelines, and Sigma rule creation. |
-| `/tools/config/` | Custom Sigma configurations and mappings for parsing rules into different formats like Wazuh/Elastic. |
+| `/labs/` | Lab simulations demonstrating attack techniques and corresponding detection logic. |
+| `/docs/` | Guides on Sigma rule writing, SIEM pipelines, and detection engineering practices. |
+| `/lesson_sets/` | Deep-dive technical notes covering critical cybersecurity and detection concepts. |
+| `/tools/config/` | Sigma configuration files for backends like Wazuh, Splunk, and Elastic. |
 
 ---
 
-##  **Current Sigma Rules**
+## **Lesson Sets**
+
+Extensive technical notes that build foundational and advanced knowledge essential for SOC analysts and detection engineers:
+
+- **SMB & File Sharing**: Covers SMB protocol, NTFS permissions, share permissions, mapping drives, and detection use cases like NTLM Relay and file access abuse.
+- **Windows Networking Stack**: Includes OSI model, IP addressing, ARP, DNS resolution, Windows firewall, and diagnostic tools.
+- **DNS Records**: Deep dive into DNS record types and their security implications.
+- **Windows Event Logs**: Explains Event ID taxonomy, Sysmon configurations, Kerberos logs, DC Sync attacks, and relevant Sigma rules.
+- **Windows Internals**: Explores boot processes, Windows processes/threads, handles/tokens, registry persistence, DLL injection, AV logs, WMI, and key Event IDs for detection.
+- **Windows Kernel**: Examines kernel architecture, syscall tables, ETW, PatchGuard, and detection of kernel-level attack techniques like DKOM.
+
+These notes provide the detection rationale that informs Sigma rule development and SIEM-based detection pipelines.
+
+---
+
+## **Current Sigma Rules**
 
 | Rule File | Description | MITRE ATT&CK |
 |-----------|-------------|--------------|
 | `suspicious_powershell.yml` | Detects use of PowerShell EncodedCommand flag. | T1059.001 |
-| `service_creation.yml` | Identifies suspicious Windows service creation patterns. | T1543.003 |
-| `defender_bypass.yml` | Detects attempts to disable Microsoft Defender via command line. | T1562.001 |
-
-More rules to be added continuously.
+| `service_creation.yml` | Identifies suspicious Windows service creation. | T1543.003 |
+| `defender_bypass.yml` | Detects command-line Defender bypass attempts. | T1562.001 |
 
 ---
 
 ## **Lab Simulations**
 
-- **Encoded PowerShell Command**: Demonstrates obfuscation via EncodedCommand flag with detection strategy using Sysmon.
-- **HoneyUser Detection**: Implements a honeyuser in Active Directory to detect unauthorized account enumeration attempts.
-  
-All labs are documented in `/labs/` with step-by-step procedures, observations, and MITRE mapping.
+- **Encoded PowerShell Command**: Obfuscation detection via Sysmon.
+- **HoneyUser Detection**: Trap-based detection for unauthorized account enumeration.
+
+Detailed PDFs are available in the `/labs/` directory, documenting step-by-step simulations and detection strategies.
 
 ---
 
 ## **Documentation**
 
-- **Rule-Writing Guide**: Step-by-step guide to writing effective Sigma rules.
-- **SIEM Pipeline**: Overview of how logs flow through collection, normalization, enrichment, and detection in a SOC SIEM.
+- **Rule-Writing Guide**: Process for developing effective Sigma rules.
+- **SIEM Pipeline Guide**: End-to-end data flow from log collection to alerting and SOAR integration.
 
 ---
 
-## **Future Enhancements**
+## **Author**
 
-- Additional Sigma rules for Linux and Cloud environments.
-- Example implementations in Wazuh, Elastic, and Splunk
+Brayden Thompson  
+[LinkedIn](https://www.linkedin.com/in/brayden-thompson-093238214) | [GitHub](https://github.com/Beowxlf)
+
+> **Stay Watchful. Find What Hides. Defend What Matters.**
